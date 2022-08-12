@@ -35,7 +35,7 @@
 					{{#if display.armorClass}}
 						<li class="monster-ac">
 							<p>
-								<span class="label">Armor Class</span>
+								<span class="label">Класс Защиты</span>
 								<span>
 									{{#if monster.ac.value}}{{monster.ac.value}} {{/if}}
 									{{#if monster.ac.type}}({{monster.ac.type}}){{/if}}
@@ -46,7 +46,7 @@
 					{{#if display.hitPoints}}
 						<li class="monster-hp">
 							<p>
-								<span class="label">Hit Points</span>
+								<span class="label">Хиты</span>
 								<span>
 									{{#if monster.hp.average}}{{monster.hp.average}} {{/if}}
 									{{#if monster.hp.roll}}({{monster.hp.roll}}){{/if}}
@@ -57,7 +57,7 @@
 					{{#if display.speeds}}
 						<li class="monster-speed">
 							<p>
-								<span class="label">Speed</span>
+								<span class="label">Скорость</span>
 								<span>{{{fmtMonsterSpeeds monster.speeds}}}</span>
 							</p>
 						</li>
@@ -97,7 +97,7 @@
 					{{#if display.savingThrows}}
 						<li class="monster-saves">
 							<p>
-								<span class="label">{{#if monster.attack.isActive}}Saves{{/if}}{{#unless monster.attack.isActive}}Saving Throws{{/unless}}</span>
+								<span class="label">{{#if monster.attack.isActive}}Спасброски{{/if}}{{#unless monster.attack.isActive}}Спасброски{{/unless}}</span>
 								<span>
 									{{#if display.quickstart}}
 										{{#if monster.attack.isActive}}
@@ -117,7 +117,7 @@
 					{{#if display.skills}}
 						<li class="monster-skills">
 							<p>
-								<span class="label">Skills</span>
+								<span class="label">Навыки</span>
 								<span>
 									{{#each monster.skills}}
 										{{fmtCapitalise name}} {{fmtModifier modifier}}{{#unless @last}}, {{/unless}}
@@ -129,7 +129,7 @@
 					{{#if display.vulnerabilities}}
 						<li class="monster-vulnerabilities">
 							<p>
-								<span class="label">Damage Vulnerabilities</span>
+								<span class="label">Уязвимости к урону</span>
 								<span>
 									{{#each monster.vulnerabilities}}
 										{{this}}{{#unless @last}}, {{/unless}}
@@ -141,7 +141,7 @@
 					{{#if display.resistances}}
 						<li class="monster-resistances">
 							<p>
-								<span class="label">Damage Resistances</span>
+								<span class="label">Сопротивление урону</span>
 								<span>
 									{{#each monster.resistances}}
 										{{this}}{{#unless @last}}, {{/unless}}
@@ -153,7 +153,7 @@
 					{{#if display.immunities}}
 						<li class="monster-immunities">
 							<p>
-								<span class="label">Damage Immunities</span>
+								<span class="label">Иммунитеты к урону</span>
 								<span>
 									{{#each monster.immunities}}
 										{{this}}{{#unless @last}}, {{/unless}}
@@ -165,7 +165,7 @@
 					{{#if display.conditions}}
 						<li class="monster-conditions">
 							<p>
-								<span class="label">Condition Immunities</span>
+								<span class="label">Иммунитет к состояниям/span>
 								<span>
 									{{#each monster.conditions}}
 										{{this}}{{#unless @last}}, {{/unless}}
@@ -177,7 +177,7 @@
 					{{#if display.senses}}
 						<li class="monster-senses">
 							<p>
-								<span class="label">Senses</span>
+								<span class="label">Чувства</span>
 								<span>{{fmtMonsterSenses monster.senses}}</span>
 							</p>
 						</li>
@@ -185,7 +185,7 @@
 					{{#if display.languages}}
 						<li class="monster-languages">
 							<p>
-								<span class="label">Languages</span>
+								<span class="label">Языки</span>
 								<span>
 									{{#each monster.languages}}
 										{{fmtCapitalise this}}{{#unless @last}}, {{/unless}}
@@ -197,9 +197,9 @@
 					{{#if display.challenge}}
 						<li class="monster-challenge">
 							<p>
-								<span class="label">Challenge</span>
+								<span class="label">Опасность</span>
 								<span>
-									{{{monster.challenge.rating}}} {{#unless display.quickstart}}({{fmtLocaleString monster.challenge.xp}} XP){{/unless}}
+									{{{monster.challenge.rating}}} {{#unless display.quickstart}}({{fmtLocaleString monster.challenge.xp}} опыта){{/unless}}
 								</span>
 							</p>
 						</li>
@@ -211,14 +211,14 @@
 				<ul class="quickstart-helpers">
 					<li>
 						<p>
-							<span class="label">Attacks</span>
+							<span class="label">Атаки</span>
 							<span>{{#if monster.attack.isActive}}DC {{monster.attack.bonus}} vs AC{{#if monster.attack.isActiveSmaller}} − 10{{/if}}{{/if}}{{#unless monster.attack.isActive}}{{fmtModifier monster.attack.bonus}} to hit{{/unless}}. <i>Hit:</i> {{monster.attack.damage}} damage</span>
 						</p>
 					</li>
 					<li>
 						<p>
-							<span class="label">Attack DCs</span>
-							<span>Primary DC {{monster.dc.primary}}, Secondary DC {{monster.dc.secondary}}</span>
+							<span class="label">КС Атак</span>
+							<span>Основной КС {{monster.dc.primary}}, Вторичный КС {{monster.dc.secondary}}</span>
 						</p>
 					</li>
 					{{#if monster.attack.isActive}}
@@ -233,7 +233,7 @@
 			{{/if}}
 			<hr/>
 			{{#if display.traits}}
-				<h5 class="h5-traits">Traits</h5>
+				<h5 class="h5-traits">Особенности</h5>
 				<div class="h5-border"></div>
 				{{#each monster.traits}}
 					<div class="monster-trait">
@@ -242,7 +242,7 @@
 				{{/each}}
 			{{/if}}
 			{{#if display.actions}}
-				<h5>Actions</h5>
+				<h5>Действия</h5>
 				<div class="h5-border"></div>
 				{{#each monster.actions}}
 					<div class="monster-action">
@@ -251,7 +251,7 @@
 				{{/each}}
 			{{/if}}
 			{{#if display.reactions}}
-				<h5>Reactions</h5>
+				<h5>Реакции</h5>
 				<div class="h5-border"></div>
 				{{#each monster.reactions}}
 					<div class="monster-reaction">
@@ -260,15 +260,15 @@
 				{{/each}}
 			{{/if}}
 			{{#if display.paragonActions}}
-				<h5>Paragon Actions</h5>
+				<h5>Действия парагона</h5>
 				<div class="h5-border"></div>
-				<p class="paragon-actions">You can take {{monster.paragonActions}} paragon action(s), choosing to either move or perform one action. Only one paragon action can be used at a time and only at the end of another creature's turn. You regain spent paragon actions at the start of your turn.</p>
+				<p class="paragon-actions">Существо может совершить {{monster.paragonActions}} действия парагона, выбирая между движением или действием. Только одно действие парагона может быть использовано единовременно и только в конце хода другого существа. Существо восстанавливает использованные действия парагона в начале своего хода..</p>
 			{{/if}}
 			{{#if display.legendaryActions}}
-				<h5>Legendary Actions</h5>
+				<h5>Легендарные Действия</h5>
 				<div class="h5-border"></div>
 				{{#if display.legendaryActionsPerRound}}
-					<p class="legendary-per-round">You can take {{monster.legendaryActionsPerRound}} legendary action(s), choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature's turn. You regain spent legendary actions at the start of your turn.</p>
+					<p class="legendary-per-round">Существо может совершить {{monster.legendaryActionsPerRound}} легендарных действия, выбрав из предложенных ниже вариантов. Одновременно можно использовать только один вариант легендарного действия и только в конце хода другого существа. Существо восстанавливает потраченные легендарные действия в начале своего хода.</p>
 				{{/if}}
 				{{#each monster.legendaryActions}}
 					<div class="monster-legendary-action">
@@ -277,10 +277,10 @@
 				{{/each}}
 			{{/if}}
 			{{#if display.lairActions}}
-				<h5>Lair Actions</h5>
+				<h5>Действия логова</h5>
 				<div class="h5-border"></div>
 				{{#if display.lairActionsInitiative}}
-					<p class="lair-initiative">On initiative count {{monster.lairActionsInitiative}} (losing initiative ties), you may take a lair action to trigger one of the following effects. You can't use the same effect two rounds in a row.</p>
+					<p class="lair-initiative">На счете инициативы {{monster.lairActionsInitiative}} (уступая всем в случае равенство), существо может совершить действие логова, выбрав один из следующих эффектов. При этом нельзя использовать один и тот же эффект дважды подряд.</p>
 				{{/if}}
 				{{#each monster.lairActions}}
 					<div class="monster-lair-action">
@@ -289,7 +289,7 @@
 				{{/each}}
 			{{/if}}
 			{{#if display.notes}}
-				<h5 class="h5-notes">Notes</h5>
+				<h5 class="h5-notes">Примечания</h5>
 				<div class="h5-border"></div>
 				<div class="monster-notes">
 					{{#each monster.notes}}
@@ -297,7 +297,7 @@
 					{{/each}}
 				</div>
 			{{/if}}
-			<p class="monster-footer">Made with Giffyglyph's Monster Maker</p>
+			<p class="monster-footer">Сделано с помощью редактора Киборгов и Чародеев</p>
 		</div>
 		<div class="monster-contents-footer"></div>
 	</div>
@@ -305,7 +305,7 @@
 <div>
 	{{#if display.downloadPng}}
 		<button type="button" class="btn btn-sm btn-primary btn-png">
-			<span class="fas fa-camera"></span> Download as PNG
+			<span class="fas fa-camera"></span> Сохранить as PNG
 		</button>
 	{{/if}}
 	<button type="button" class="btn btn-sm btn-primary btn-columns icon-only icon-border">
