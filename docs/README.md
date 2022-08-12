@@ -1,6 +1,6 @@
 ![Monster Maker Social Banner](./img/monster-maker-banner.jpg)
 
-# Giffyglyph's 5e Monster Maker Webapp
+# Перевод на русский Giffyglyph's 5e Monster Maker Webapp
 
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 [![Support me on Patreon](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3Dgiffyglyph%26type%3Dpatrons&style=flat-square)](https://patreon.com/giffyglyph)
