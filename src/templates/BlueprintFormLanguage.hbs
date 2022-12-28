@@ -1,7 +1,7 @@
 <div class="repeatable-item">
 	{{> BlueprintFormRepeatingMenu}}
 	<div class="form-group">
-		<label>Language</label>
+		<label>Язык</label>
 		<select class="form-control custom-toggle" data-name="name">
 			<option value="custom" {{selected name "custom"}}>Пользовательский</option>
 			<option value="all" {{selectedDefault name "all"}}>Все</option>
@@ -30,7 +30,7 @@
 		</select>
 	</div>
 	<div class="form-group custom" {{{customToggle name}}}>
-		<label>Name</label>
+		<label>Название</label>
 		<input type="text" class="form-control" data-name="custom" {{{setValue custom}}}>
 	</div>
 </div>

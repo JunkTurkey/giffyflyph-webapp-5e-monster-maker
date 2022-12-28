@@ -67,27 +67,27 @@
 			<hr/>
 			<div class="monster-abilities">
 				<div class="monster-ability">
-					<span class="label">Str</span>
+					<span class="label">Сил</span>
 					<span>{{monster.abilities.str.score}} <span class="modifier">({{{fmtModifier monster.abilities.str.modifier}}})</span></span>
 				</div>
 				<div class="monster-ability">
-					<span class="label">Dex</span>
+					<span class="label">Лов</span>
 					<span>{{monster.abilities.dex.score}} <span class="modifier">({{{fmtModifier monster.abilities.dex.modifier}}})</span></span>
 				</div>
 				<div class="monster-ability">
-					<span class="label">Con</span>
+					<span class="label">Тел</span>
 					<span>{{monster.abilities.con.score}} <span class="modifier">({{{fmtModifier monster.abilities.con.modifier}}})</span></span>
 				</div>
 				<div class="monster-ability">
-					<span class="label">Int</span>
+					<span class="label">Инт</span>
 					<span>{{monster.abilities.int.score}} <span class="modifier">({{{fmtModifier monster.abilities.int.modifier}}})</span></span>
 				</div>
 				<div class="monster-ability">
-					<span class="label">Wis</span>
+					<span class="label">Муд</span>
 					<span>{{monster.abilities.wis.score}} <span class="modifier">({{{fmtModifier monster.abilities.wis.modifier}}})</span></span>
 				</div>
 				<div class="monster-ability">
-					<span class="label">Cha</span>
+					<span class="label">Хар</span>
 					<span>{{monster.abilities.cha.score}} <span class="modifier">({{{fmtModifier monster.abilities.cha.modifier}}})</span></span>
 				</div>
 			</div>
@@ -141,7 +141,7 @@
 					{{#if display.resistances}}
 						<li class="monster-resistances">
 							<p>
-								<span class="label">Сопротивление урону</span>
+								<span class="label">Сопротивления урону</span>
 								<span>
 									{{#each monster.resistances}}
 										{{this}}{{#unless @last}}, {{/unless}}
@@ -153,7 +153,7 @@
 					{{#if display.immunities}}
 						<li class="monster-immunities">
 							<p>
-								<span class="label">Иммунитеты к урону</span>
+								<span class="label">Иммунитет к урону</span>
 								<span>
 									{{#each monster.immunities}}
 										{{this}}{{#unless @last}}, {{/unless}}
@@ -165,7 +165,7 @@
 					{{#if display.conditions}}
 						<li class="monster-conditions">
 							<p>
-								<span class="label">Иммунитет к состояниям/span>
+								<span class="label">Иммунитет к состояниям</span>
 								<span>
 									{{#each monster.conditions}}
 										{{this}}{{#unless @last}}, {{/unless}}
@@ -212,7 +212,7 @@
 					<li>
 						<p>
 							<span class="label">Атаки</span>
-							<span>{{#if monster.attack.isActive}}DC {{monster.attack.bonus}} vs AC{{#if monster.attack.isActiveSmaller}} − 10{{/if}}{{/if}}{{#unless monster.attack.isActive}}{{fmtModifier monster.attack.bonus}} to hit{{/unless}}. <i>Hit:</i> {{monster.attack.damage}} damage</span>
+							<span>{{#if monster.attack.isActive}}DC {{monster.attack.bonus}} против КЗ{{#if monster.attack.isActiveSmaller}} − 10{{/if}}{{/if}}{{#unless monster.attack.isActive}}{{fmtModifier monster.attack.bonus}} к попаданию{{/unless}}. <i>Hit:</i> {{monster.attack.damage}} damage</span>
 						</p>
 					</li>
 					<li>
@@ -224,8 +224,8 @@
 					{{#if monster.attack.isActive}}
 						<li>
 							<p>
-								<span class="label">Active Defence</span>
-								<span>{{#if monster.attack.isActiveSmaller}}<i>(Smaller Variant) </i>{{/if}}You don't roll to attack. Instead, your targets roll to defend.</span>
+								<span class="label">Активная Защита</span>
+								<span>{{#if monster.attack.isActiveSmaller}}<i>(Smaller Variant) </i>{{/if}}Вы не совершаете бросок атаки - вместо этого цель совершает бросок защиты.</span>
 							</p>
 						</li>
 					{{/if}}
@@ -305,7 +305,7 @@
 <div>
 	{{#if display.downloadPng}}
 		<button type="button" class="btn btn-sm btn-primary btn-png">
-			<span class="fas fa-camera"></span> Сохранить as PNG
+			<span class="fas fa-camera"></span> Сохранить как PNG
 		</button>
 	{{/if}}
 	<button type="button" class="btn btn-sm btn-primary btn-columns icon-only icon-border">
