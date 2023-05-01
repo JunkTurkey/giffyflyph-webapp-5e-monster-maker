@@ -42,7 +42,7 @@
 							<option value="lurker" {{selected blueprint.description.role "lurker"}}>Скрытень</option>
 							<option value="scout" {{selected blueprint.description.role "scout"}}>Разведчик</option>
 							<option value="sniper" {{selected blueprint.description.role "sniper"}}>Снайпер</option>
-							<option value="striker" {{selected blueprint.description.role "striker"}}>Striker</option>
+							<option value="striker" {{selected blueprint.description.role "striker"}}>Атакующий</option>
 							<option value="supporter" {{selected blueprint.description.role "supporter"}}>Поддержка</option>
 						</select>
 					</div>
@@ -387,7 +387,7 @@
 			<div class="card-header">
 				<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#blueprint-saving-throws" {{#if display.blueprint-saving-throws}}aria-expanded="true"{{/if}}>
 					<span class="fas fa-chevron-right"></span>
-					<span class="title">спасброски</span>
+					<span class="title">Спасброски</span>
 					<span class="badge manual-only">{{blueprint.savingThrows.length}}</span>
 				</button>
 			</div>
@@ -649,7 +649,7 @@
 			<div id="blueprint-challenge" class="collapse {{#if display.blueprint-challenge}}show{{/if}}" data-parent="#accordion-blueprint">
 				<div class="card-body">
 					<div class="form-group">
-						<label>CR</label>
+						<label>ПО</label>
 						<select class="form-control custom-toggle" name="challenge.rating" id="monster-cr">
 							<option value="custom" {{selected blueprint.challenge.rating "custom"}}>Пользовательский</option>
 							<option value="0" {{selected blueprint.challenge.rating "0"}}>0</option>
