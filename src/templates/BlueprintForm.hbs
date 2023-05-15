@@ -622,7 +622,7 @@
 			<div class="card-header">
 				<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#blueprint-languages" {{#if display.blueprint-languages}}aria-expanded="true"{{/if}}>
 					<span class="fas fa-chevron-right"></span>
-					<span class="title">Язіки</span>
+					<span class="title">Языки</span>
 					<span class="badge">{{blueprint.languages.length}}</span>
 				</button>
 			</div>
@@ -764,6 +764,30 @@
 				</div>
 			</div>
 		</div>
+        <div class="card repeatable-section" data-path="bonus_actions" data-template="BlueprintFormTraitAction">
+            <div class="card-header">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#blueprint-action" {{#if display.blueprint-action}}aria-expanded="true"{{/if}}>
+                    <span class="fas fa-chevron-right"></span>
+                    <span class="title">Бонусные действия</span>
+                    <span class="badge">{{blueprint.bonus_actions.length}}</span>
+                </button>
+            </div>
+            <div id="blueprint-action" class="collapse {{#if display.blueprint-action}}show{{/if}}" data-parent="#accordion-blueprint">
+                <div class="card-body">
+                    {{#each blueprint.bonus_actions}}
+                        {{> BlueprintFormTraitAction this}}
+                    {{/each}}
+                </div>
+                <div class="card-footer text-right">
+                    <button class="btn btn-sm btn-secondary icon-only icon-border" type="button" data-toggle="modal" data-target="#modal-markdown">
+                        <span class="fas fa-question"></span>
+                    </button>
+                    <button type="button" class="btn btn-sm btn-secondary btn-add">
+                        <span class="fas fa-plus"></span> Добавить бонусное действие
+                    </button>
+                </div>
+            </div>
+        </div>
 		<div class="card repeatable-section" data-path="reactions" data-template="BlueprintFormTraitAction">
 			<div class="card-header">
 				<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#blueprint-reaction" {{#if display.blueprint-reaction}}aria-expanded="true"{{/if}}>
@@ -851,7 +875,7 @@
 			<div id="blueprint-lair-action" class="collapse {{#if display.blueprint-lair-action}}show{{/if}}" data-parent="#accordion-blueprint">
 				<div class="card-body">
 					<div class="form-group section-end">
-						<label>Initiative</label>
+						<label>Инициатива</label>
 						<input type="number" class="form-control" name="lairActionsInitiative" placeholder="0" {{{setValue blueprint.lairActionsInitiative}}}>
 					</div>
 					{{#each blueprint.lairActions}}

@@ -89,6 +89,7 @@ class PanelLaboratory extends Component {
 				let blueprint = Storage.getLaboratoryBlueprint();
 				blueprint.setTraits([]);
 				blueprint.setActions([]);
+				blueprint.setBonusActions([]);
 				blueprint.setReactions([]);
 				blueprint.setLegendaryActions([]);
 				blueprint.setLairActions([]);

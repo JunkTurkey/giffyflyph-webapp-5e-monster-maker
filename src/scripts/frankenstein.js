@@ -249,7 +249,7 @@ const Frankenstein = (function() {
 			}
 		});
 		senses.push({
-			type: "passive Perception",
+			type: "пассивное Восприятие",
 			value: 10 + getSkillModifier(monster, "perception")
 		});
 		monster.setSenses(senses);
@@ -368,6 +368,18 @@ const Frankenstein = (function() {
 			}
 		});
 		monster.setActions(actions);
+
+		// Set bonus actions
+		let bonus_actions = [];
+		blueprint.getBonusActions().forEach(function(bonus_action) {
+			if (bonus_action.name != null || bonus_action.detail != null) {
+				bonus_actions.push({
+					name: bonus_action.name,
+					detail: parseMarkdown(bonus_action.detail, monster)
+				});
+			}
+		});
+		monster.setBonusActions(bonus_actions);
 
 		// Set reactions
 		let reactions = [];
@@ -543,14 +555,23 @@ const Frankenstein = (function() {
 	*/
 	function getAbilityFromSkill(skill) {
 		switch(skill) {
+			case "Атлетика":
 			case "athletics":
 				return "str";
 				break;
+			case "Акробатика":
+			case "Ловкость рук":
+			case "Скрытность":
 			case "acrobatics":
 			case "sleight of hand":
 			case "stealth":
 				return "dex";
 				break;
+			case "Магия":
+			case "История":
+			case "Анализ":
+			case "Природа":
+			case "Религия":
 			case "arcana":
 			case "history":
 			case "investigation":
@@ -558,6 +579,11 @@ const Frankenstein = (function() {
 			case "religion":
 				return "int";
 				break;
+			case "Обращение с животными":
+			case "Проницательность":
+			case "Медицина":
+			case "Выживание":
+			case "Восприятие":
 			case "animal handling":
 			case "insight":
 			case "medicine":
@@ -565,6 +591,10 @@ const Frankenstein = (function() {
 			case "perception":
 				return "wis";
 				break;
+			case "Обман":
+			case "Устрашение":
+			case "Выступление":
+			case "Убеждение":
 			case "deception":
 			case "intimidation":
 			case "performance":

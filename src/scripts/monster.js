@@ -57,6 +57,7 @@ class Monster {
 		};
 		this.traits = [];
 		this.actions = [];
+		this.bonus_actions = [];
 		this.reactions = [];
 		this.paragonActions = null;
 		this.legendaryActionsPerRound = null;
@@ -399,6 +400,14 @@ class Monster {
 
 	setActions(actions) {
 		this.actions = actions;
+	}
+
+	getBonusActions() {
+		return this.bonus_actions;
+	}
+
+	setBonusActions(bonus_actions) {
+		this.bonus_actions = bonus_actions;
 	}
 
 	getReactions() {

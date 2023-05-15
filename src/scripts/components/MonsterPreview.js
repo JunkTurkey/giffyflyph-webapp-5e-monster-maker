@@ -73,6 +73,7 @@ class MonsterPreview extends Component {
 			challenge: monster.getChallengeRating() != null || monster.getChallengeXp() != null,
 			traits: monster.getTraits().length > 0,
 			actions: monster.getActions().length > 0,
+			bonus_actions: monster.getBonusActions().length > 0,
 			reactions: monster.getReactions().length > 0,
 			paragonActions: monster.getMethod() == "quickstart" && monster.getParagonActions() != null && monster.getParagonActions() > 0,
 			legendaryActions: monster.getLegendaryActions().length > 0 || (monster.getLegendaryActionsPerRound() != 0 && monster.getLegendaryActionsPerRound() != null),

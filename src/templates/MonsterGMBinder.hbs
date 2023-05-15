@@ -20,7 +20,7 @@ ___
 {{/unless}}
 {{/if}}
 {{#unless isQuickstart}}
-> - **SСпасброски** {{fmtMonsterSavingThrows savingThrows}}
+> - **Спасброски** {{fmtMonsterSavingThrows savingThrows}}
 {{/unless}}
 {{/if}}
 {{#if skills}}
@@ -63,6 +63,13 @@ ___
 {{#if actions}}
 > ### Действия
 {{#each actions}}
+> ***{{name}}.*** {{fmtGMBinderMarkdown detail}}
+>
+{{/each}}
+{{/if}}
+{{#if bonus_actions}}
+> ### Бонусные действия
+{{#each bonus_actions}}
 > ***{{name}}.*** {{fmtGMBinderMarkdown detail}}
 >
 {{/each}}
