@@ -194,16 +194,22 @@
 							</p>
 						</li>
 					{{/if}}
-					{{#if display.challenge}}
-						<li class="monster-challenge">
-							<p>
-								<span class="label">Опасность</span>
-								<span>
+                    {{#if display.challenge}}
+                        <li class="monster-challenge" style="display: inline-flex; width:100%; justify-content: space-between">
+                            <div>
+                                <span class="label">Опасность</span>
+                                <span>
 									{{{monster.challenge.rating}}} {{#unless display.quickstart}}({{fmtLocaleString monster.challenge.xp}} опыта){{/unless}}
 								</span>
-							</p>
-						</li>
-					{{/if}}
+                            </div>
+                            <div>
+                                <span class="label">Бонус владения</span>
+                                <span>
+                                    + {{{monster.challenge.proficiency}}}
+                                </span>
+                            </div>
+                        </li>
+                    {{/if}}
 				</ul>
 			{{/if}}
 			{{#if display.quickstart}}

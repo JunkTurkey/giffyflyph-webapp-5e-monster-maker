@@ -3,7 +3,7 @@
  */
 const DEFAULT_ROLES = {
 	controller: {
-		id: "контроллер",
+		id: "controller",
 		ac: -2,
 		hp: 1,
 		attack: 0,
@@ -16,7 +16,7 @@ const DEFAULT_ROLES = {
 		initiative: true
 	},
 	defender: {
-		id: "защитник",
+		id: "defender",
 		ac: 2,
 		hp: 1,
 		attack: 0,
@@ -29,7 +29,7 @@ const DEFAULT_ROLES = {
 		initiative: false
 	},
 	lurker: {
-		id: "скрытень",
+		id: "lurker",
 		ac: -4,
 		hp: 0.5,
 		attack: 2,
@@ -42,7 +42,7 @@ const DEFAULT_ROLES = {
 		initiative: false
 	},
 	sniper: {
-		id: "снайпер",
+		id: "sniper",
 		ac: 0,
 		hp: 0.75,
 		attack: 0,
@@ -55,7 +55,7 @@ const DEFAULT_ROLES = {
 		initiative: false
 	},
 	striker: {
-		id: "атакующий",
+		id: "striker",
 		ac: -4,
 		hp: 1.25,
 		attack: 2,
@@ -68,7 +68,7 @@ const DEFAULT_ROLES = {
 		initiative: false
 	},
 	scout: {
-		id: "разведчик",
+		id: "scout",
 		ac: -2,
 		hp: 1,
 		attack: 0,
@@ -81,7 +81,7 @@ const DEFAULT_ROLES = {
 		initiative: true
 	},
 	supporter: {
-		id: "поддержка",
+		id: "supporter",
 		ac: -2,
 		hp: 0.75,
 		attack: 0,
