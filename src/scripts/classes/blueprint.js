@@ -9,9 +9,9 @@ class Blueprint {
 		this.method = "quickstart";
 		this.description = {
 			name: null,
-			size: "medium",
-			type: "humanoid",
-			alignment: "unaligned",
+			size: "Средний",
+			type: "Гуманоид",
+			alignment: "Без мировоззрения",
 			level: 1,
 			role: "striker",
 			rank: "standard",

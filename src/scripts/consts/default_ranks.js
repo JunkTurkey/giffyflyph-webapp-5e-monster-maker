@@ -3,7 +3,7 @@
  */
 const DEFAULT_RANKS = {
 	minion: {
-		id: "миньон",
+		id: "minion",
 		ac: -2,
 		hp: 0.2,
 		attack: -2,
@@ -16,7 +16,7 @@ const DEFAULT_RANKS = {
 		xp: 0.0625
 	},
 	standard: {
-		id: "обычный",
+		id: "standard",
 		ac: 0,
 		hp: 1,
 		attack: 0,
@@ -29,7 +29,7 @@ const DEFAULT_RANKS = {
 		xp: 0.25
 	},
 	elite: {
-		id: "элитный",
+		id: "elite",
 		ac: 2,
 		hp: 2,
 		attack: 2,
@@ -42,7 +42,7 @@ const DEFAULT_RANKS = {
 		xp: 0.5
 	},
 	solo: {
-		id: "соло",
+		id: "solo",
 		ac: 2,
 		hp: 4,
 		attack: 2,
