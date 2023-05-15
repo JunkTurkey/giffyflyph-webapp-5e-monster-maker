@@ -250,6 +250,15 @@
 					</div>
 				{{/each}}
 			{{/if}}
+			{{#if display.bonus_actions}}
+				<h5>Бонусные действия</h5>
+				<div class="h5-border"></div>
+				{{#each monster.bonus_actions}}
+					<div class="monster-action">
+						<p>{{#if name}}<span class="name">{{name}}.</span>{{/if}}{{#if detail}} <span class="detail">{{{detail}}}</span>{{/if}}</p>
+					</div>
+				{{/each}}
+			{{/if}}
 			{{#if display.reactions}}
 				<h5>Реакции</h5>
 				<div class="h5-border"></div>

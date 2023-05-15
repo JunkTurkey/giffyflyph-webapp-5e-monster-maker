@@ -100,6 +100,7 @@ class Blueprint {
 		};
 		this.traits = [];
 		this.actions = [];
+		this.bonus_actions = [];
 		this.reactions = [];
 		this.paragonActions = {
 			type: "default",
@@ -301,6 +302,12 @@ class Blueprint {
 			return {
 				name: parseString(action.name),
 				detail: parseString(action.detail)
+			};
+		});
+		this.bonus_actions = parseArray(options.bonus_actions, function(bonus_action) {
+			return {
+				name: parseString(bonus_action.name),
+				detail: parseString(bonus_action.detail)
 			};
 		});
 		this.reactions = parseArray(options.reactions, function(reaction) {
@@ -744,6 +751,14 @@ class Blueprint {
 
 	setActions(actions) {
 		this.actions = actions;
+	}
+
+	getBonusActions() {
+		return this.bonus_actions;
+	}
+
+	setBonusActions(bonus_actions) {
+		this.bonus_actions = bonus_actions;
 	}
 
 	getReactions() {

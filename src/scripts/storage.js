@@ -54,6 +54,7 @@ const Storage = (function() {
 				detail: "_Melee Weapon Attack:_ [dc-primary] vs Strength. _Hit:_ the target is pushed up to 10 ft away."
 			}
 		]);
+		blueprint.setBonusActions([]);
 		return {
 			blueprint: blueprint,
 			display: {}

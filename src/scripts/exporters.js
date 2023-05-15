@@ -48,7 +48,7 @@ const Exporters = (function(){
 					Modifier: x.modifier
 				}
 			}),
-			Senses: monster.getSenses().filter(x => x.type != "passive Perception").map(function(x) {
+			Senses: monster.getSenses().filter(x => x.type != "пассивное Восприятие").map(function(x) {
 				return x.type + " " + x.value;
 			}),
 			Languages: monster.getLanguages().filter(x => x != "—"),
