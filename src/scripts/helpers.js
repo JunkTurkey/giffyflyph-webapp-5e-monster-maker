@@ -10,6 +10,15 @@ const Helpers = (function(){
 	 */
 	function initialise() {
 
+		const translations = {
+			str: "Сил",
+			dex: "Лов",
+			con: "Тел",
+			int: "Инт",
+			wis: "Муд",
+			cha: "Хар",
+		}
+
 		// Set list of handlebars partials
 		Handlebars.partials = Handlebars.templates;
 
@@ -45,6 +54,29 @@ const Helpers = (function(){
 
 		Handlebars.registerHelper('fmtCapitalise', function(text) {
 			return capitalise(text);
+		});
+
+		Handlebars.registerHelper('fmtTranslateRoles', function(item) {
+			const translations = {
+				controller: "контроллер",
+				defender: "защитник",
+				lurker: "скрытень",
+				sniper: "снайпер",
+				striker: "атакующий",
+				scout: "разведчик",
+				supporter: "поддержка",
+			}
+			return capitalise(translations[item]);
+		});
+
+		Handlebars.registerHelper('fmtTranslateRanks', function(item) {
+			const translations = {
+				minion: "миньон",
+				standard: "стандарт",
+				elite: "элитный",
+				solo: "соло",
+			}
+			return capitalise(translations[item]);
 		});
 
 		Handlebars.registerHelper('fmtLocaleString', function(value) {
@@ -102,7 +134,7 @@ const Helpers = (function(){
 			["str", "dex", "con", "int", "wis", "cha"].forEach(function(attribute) {
 				let save = savingThrows.find(x => x.ability == attribute);
 				if (save) {
-					output += capitalise(attribute) + " " + (save.modifier >= 0 ? '+' : "−") + Math.abs(save.modifier);
+					output += translations[attribute] + " " + (save.modifier >= 0 ? '+' : "−") + Math.abs(save.modifier);
 					count++;
 					if (count < savingThrows.length) {
 						output += ", ";
@@ -118,7 +150,7 @@ const Helpers = (function(){
 			let order = Object.keys(group).map(x => Number(x)).sort(function(a, b) { return b - a; });
 			order.forEach(function(key, i) {
 				group[key].forEach(function(save, j) {
-					output += capitalise(save.ability);
+					output += translations[save.ability];
 					if (j < group[key].length - 1) {
 						output += "/";
 					} else {
@@ -138,7 +170,7 @@ const Helpers = (function(){
 			let order = Object.keys(group).map(x => Number(x)).sort(function(a, b) { return b - a; });
 			order.forEach(function(key, i) {
 				group[key].forEach(function(save, j) {
-					output += capitalise(save.ability);
+					output += translations[save.ability];
 					if (j < group[key].length - 1) {
 						output += "/";
 					} else {
@@ -158,7 +190,7 @@ const Helpers = (function(){
 			let order = Object.keys(group).map(x => Number(x)).sort(function(a, b) { return b - a; });
 			order.forEach(function(key, i) {
 				group[key].forEach(function(save, j) {
-					output += capitalise(save.ability);
+					output += translations[save.ability];
 					if (j < group[key].length - 1) {
 						output += "/";
 					} else {
