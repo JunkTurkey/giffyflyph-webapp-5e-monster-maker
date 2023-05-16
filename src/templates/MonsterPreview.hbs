@@ -24,7 +24,7 @@
 					</div>
 					{{#if display.quickstart}}
 						<div class="monster-quickstart">
-							<p>Level {{monster.description.level}} {{fmtCapitalise monster.description.role}}<br/> {{fmtCapitalise monster.description.rank}} <span class="solo-only">vs {{monster.description.players}} </span>({{fmtLocaleString monster.challenge.xp}} XP)</p>
+							<p>Уровень {{monster.description.level}} {{fmtTranslateRoles monster.description.role}}<br/> {{fmtTranslateRanks monster.description.rank}} <span class="solo-only">vs {{monster.description.players}} </span>({{fmtLocaleString monster.challenge.xp}} XP)</p>
 						</div>
 					{{/if}}
 				</div>
