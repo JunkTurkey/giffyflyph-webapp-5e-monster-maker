@@ -131,4 +131,6 @@ gulp.task('default', gulp.series('build', 'webserver'));
 const {src, task}= require('gulp');
 const ghPages = require('gulp-gh-pages');
 
-gulp.task('deploy', () => src('./dist/**/*').pipe(ghPages()));
+task('deploy', () => src('./dist/**/*').pipe(ghPages({
+	remoteUrl: 'https://github.com/JunkTurkey/giffyflyph-webapp-5e-monster-maker.git'
+})));
