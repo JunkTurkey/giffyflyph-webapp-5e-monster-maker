@@ -1,594 +1,594 @@
 /**
-* Особенности монстра по умолчанию.
-*/
+ * Default monster traits.
+ */
 const DEFAULT_TRAITS = [
 	{
 		id: 0,
 		role: "controller",
-		name: "Откат",
-		description: "Уменьшите вдвое урон от атаки, чтобы отбросить цель на расстояние до 15 футов."
+		name: "Knockback",
+		description: "Halve your attack damage to knock the target back up to 15ft."
 	},
 	{
 		id: 1,
 		role: "controller",
-		name: "Отвлечение",
-		description: "Уменьшите вдвое урон от атаки, чтобы получить преимущество при следующем броске атаки по цели."
+		name: "Distraction",
+		description: "Halve your attack damage to grant advantage to the next attack roll made against the target."
 	},
 	{
 		id: 2,
 		role: "controller",
-		name: "Встать на позицию",
-		description: "Уменьшите вдвое урон от атаки, чтобы позволить союзнику потратить свою реакцию и переместиться на половину своей скорости (не провоцируя атаки цели)."
+		name: "Get Into Position",
+		description: "Halve your attack damage to allow an ally to spend their reaction and move up to half their speed (without provoking opportunity attacks from the target)."
 	},
 	{
 		id: 3,
 		role: "controller",
-		name: "В сторону",
-		description: "Уменьшите вдвое урон от атаки, чтобы переместить себя и свою цель на 5 футов в любом направлении."
+		name: "Sidestep",
+		description: "Halve your attack damage to move yourself and your target 5ft in any direction."
 	},
 	{
 		id: 4,
 		role: "controller",
-		name: "Калечащий удар",
-		description: "Уменьшите вдвое урон от атаки, чтобы снизить скорость цели до 0 футов до начала вашего следующего хода."
+		name: "Crippling Strike",
+		description: "Halve your attack damage to reduce your target’s speed to 0ft until the start of your next turn."
 	},
 	{
 		id: 5,
 		role: "defender",
-		name: "Тяжелая оборона",
-		description: "Ваша защита непробиваема. Получите +2 RP."
+		name: "Heavy Defence",
+		description: "Your defence is impenetrable. Gain +2 AC."
 	},
 	{
 		id: 6,
 		role: "defender",
-		name: "Получил твою спину",
-		description: "Находясь рядом с союзником или атакуя цель, вы можете потратить свою реакцию, чтобы перенаправить атаку на себя."
+		name: "Got Your Back",
+		description: "When standing next to an ally or attacking target, you can spend your reaction to redirect the attack onto yourself."
 	},
 	{
 		id: 7,
 		role: "defender",
-		name: "Ты не можешь уйти",
-		description: "Цели всегда провоцируют атаки, даже если они совершают действие Отход, прежде чем покинуть вашу досягаемость. Кроме того, когда вы наносите удар атакой по возможности, скорость цели становится равной 0 до конца хода."
+		name: "You Can’t Leave",
+		description: "Targets always provoke opportunity attacks, even if they take the Disengage action before leaving your reach. In addition, when you hit with an opportunity attack, the target’s speed becomes 0 for the rest of the turn."
 	},
 	{
 		id: 8,
 		role: "defender",
-		name: "Отойди от меня",
-		description: "Союзники в пределах 5 футов от вас считаются находящимися в укрытии на три четверти."
+		name: "Get Behind Me",
+		description: "Allies within 5ft of you count as being in three-quarters cover."
 	},
 	{
 		id: 9,
 		role: "defender",
-		name: "Не смотри в сторону",
-		description: "Когда вы атакуете цель, вы можете пометить ее. Помеченная цель имеет -2 к любому броску атаки, кроме вас. Вы можете иметь одну активную метку за раз, и метки не складываются."
+		name: "Don’t Look Away",
+		description: "When you attack a target, you can mark them. A marked target has -2 to any attack roll that doesn’t include you. You can have one active mark at a time, and marks don’t stack."
 	},
 	{
 		id: 10,
 		role: "lurker",
-		name: "Спрятаться на виду",
-		description: "Вы можете попытаться спрятаться даже за легким укрытием."
+		name: "Hide in Plain Sight",
+		description: "You can attempt to hide when behind even light cover."
 	},
 	{
 		id: 11,
 		role: "lurker",
-		name: "Удар в спину",
-		description: "Если у вас есть преимущество в атаке, добавьте свой уровень к дополнительному урону."
+		name: "Backstab",
+		description: "If you have advantage on your attack, add your level in extra damage."
 	},
 	{
 		id: 12,
 		role: "lurker",
-		name: "Хитрое действие",
-		description: "Бонусным действием вы можете совершить Рывок, Отступить или Спрятаться."
+		name: "Cunning Action",
+		description: "You can Dash, Disengage, or Hide as a bonus action."
 	},
 	{
 		id: 13,
 		role: "lurker",
-		name: "Камофлаг",
-		description: "Когда вы спрятаны, враги не могут обнаружить вас пассивным восприятием, и у них есть помеха при активных проверках, чтобы найти вас."
+		name: "Camoflague",
+		description: "When you are hidden, enemies cannot spot you with passive perception and they have disadvantage when making active checks to find you."
 	},
 	{
 		id: 14,
 		role: "lurker",
-		name: "Партизан",
-		description: "Когда вы совершаете атаку, находясь в укрытии, вы не раскрываете себя и можете оставаться в укрытии."
+		name: "Guerilla",
+		description: "When you make an attack while hidden, you don’t reveal yourself and can remain in hiding."
 	},
 	{
 		id: 15,
 		role: "sniper",
-		name: "Замри на месте",
-		description: "Вы совершаете броски атаки с преимуществом, если ваша цель переместилась менее чем на 10 футов во время своего последнего хода."
+		name: "Hold Still",
+		description: "You have advantage on attack rolls when your target moved less than 10ft during their last turn."
 	},
 	{
 		id: 16,
 		role: "sniper",
-		name: "Я вижу тебя",
-		description: "Ваши дальнобойные атаки игнорируют половину и три четверти укрытия."
+		name: "I Can See You",
+		description: "Your ranged attacks ignore half and three-quarters cover."
 	},
 	{
 		id: 17,
 		role: "sniper",
-		name: "В следующий раз",
-		description: "Если вы промахнетесь по цели, у вас будет преимущество при следующей атаке по той же цели."
+		name: "Next Time",
+		description: "If you miss a target, you have advantage on your next attack against that same target."
 	},
 	{
 		id: 18,
 		role: "sniper",
-		name: "Скаттершот",
-		description: "Когда вы совершаете успешную атаку, вы можете нанести урон, равный вашему уровню, всем в пределах 5 футов от вашей цели (один раз за раунд)."
+		name: "Scattershot",
+		description: "When you make a successful attack, you can deal damage equal to your level to everyone within 5ft of your target (once per round)."
 	},
 	{
 		id: 19,
 		role: "sniper",
-		name: "Рикошет",
-		description: "Если ваша атака промахивается, вы можете потратить реакцию, чтобы провести еще одну атаку по другой цели по вашему выбору в пределах 15 футов от исходной цели."
+		name: "Ricochet",
+		description: "If your attack misses, you can spend your reaction to make another attack against a different target of your choice within 15ft of the original target."
 	},
 	{
 		id: 20,
 		role: "striker",
-		name: "Раскол",
-		description: "Вы можете атаковать две соседние цели, находящиеся в пределах досягаемости, нанося каждой полный урон."
+		name: "Cleave",
+		description: "You can attack two adjacent targets that are within reach, dealing full damage to each."
 	},
 	{
 		id: 21,
 		role: "striker",
-		name: "Кровавая ярость",
-		description: "Когда вы ранены, вы впадаете в ярость; -2 КД и +2 к атаке."
+		name: "Bloodfury",
+		description: "When you are bloodied, you become enraged; -2 AC and +2 attack."
 	},
 	{
 		id: 22,
 		role: "striker",
-		name: "Дикое нападение",
-		description: "Один раз за ход добавьте свой уровень дополнительного урона к атаке."
+		name: "Savage Assault",
+		description: "Once per turn, add your level in extra damage to an attack."
 	},
 	{
 		id: 23,
 		role: "striker",
-		name: "Нажми Атаку",
-		description: "Вы совершаете с преимуществом броски атаки против окровавленных целей (менее 50% хитов)."
+		name: "Press the Attack",
+		description: "You have advantage on attack rolls against bloodied targets (under 50% hit points)."
 	},
 	{
 		id: 24,
 		role: "striker",
-		name: "Месть",
-		description: "Наносите дополнительный урон, равный вашему уровню, всем, кто причинил вам боль в предыдущем раунде."
+		name: "Revenge",
+		description: "Deal bonus damage equal to your level against anyone that hurt you in the previous round."
 	},
 	{
 		id: 25,
 		role: "scout",
-		name: "Тебе не спрятаться",
-		description: "Вы имеете преимущество при обнаружении скрытых врагов. Любой враг, которого вы видите, также виден вашим союзникам."
+		name: "You Can’t Hide",
+		description: "You have advantage when trying to detect hidden enemies. Any enemy that you can see is also visible to your allies."
 	},
 	{
 		id: 26,
 		role: "scout",
-		name: "Легконогий",
-		description: "Вы можете совершить Отход или Рывок бонусным действием. Когда враг перемещается рядом с вами, вы можете потратить свою реакцию, чтобы отойти со скоростью, равной половине вашей скорости."
+		name: "Light-footed",
+		description: "You can Disengage or Dash as a bonus action. When an enemy moves adjacent to you, you can spend your reaction to move away up to half your speed."
 	},
 	{
 		id: 27,
 		role: "scout",
-		name: "Исследователь",
-		description: "Вы можете взбираться и передвигаться по труднопроходимой местности без каких-либо штрафов за движение."
+		name: "Explorer",
+		description: "You can climb and move across difficult terrain without any movement penalty."
 	},
 	{
 		id: 28,
 		role: "scout",
-		name: "Движение клещей",
-		description: "Когда союзник перемещается рядом с врагом, вы можете потратить свою реакцию, чтобы двигаться с вашей скоростью к тому же врагу."
+		name: "Pincer Movement",
+		description: "When an ally moves adjacent to an enemy, you can spend your reaction to move up to your speed towards that same enemy."
 	},
 	{
 		id: 29,
 		role: "scout",
-		name: "Тяжело попасть",
-		description: "Когда вы стоите и не опутаны, атаки против вас имеют помеху, если только вы не находитесь рядом с двумя или более врагами."
+		name: "Hard to Hit",
+		description: "When you are standing and unrestained, attacks against you have disadvantage unless you are adjacent to two or more enemies."
 	},
 	{
 		id: 30,
 		role: "supporter",
-		name: "Руководство",
-		description: "Союзники в пределах 10 футов от вас совершают броски атаки с преимуществом."
+		name: "Guidance",
+		description: "Allies within 10ft of you have advantage on their attacks rolls."
 	},
 	{
 		id: 31,
 		role: "supporter",
-		name: "Защита",
-		description: "Союзники в пределах 10 футов от вас получают +2 КД."
+		name: "Protection",
+		description: "Allies within 10ft of you gain +2 AC."
 	},
 	{
 		id: 32,
 		role: "supporter",
-		name: "Свирепость",
-		description: "Союзники в пределах 10 футов от вас получают бонус к урону, равный вашему уровню."
+		name: "Ferocity",
+		description: "Allies within 10ft of you gain a bonus to damage equal to your level."
 	},
 	{
 		id: 33,
 		role: "supporter",
-		name: "Объединяющий клич",
-		description: "Уменьшите вдвое урон от атаки, чтобы снять состояние с союзника."
+		name: "Rallying Cry",
+		description: "Halve your attack damage to remove a condition from an ally."
 	},
 	{
 		id: 34,
 		role: "supporter",
-		name: "Командир",
-		description: "Вместо броска атаки вы можете приказать союзнику атаковать выбранную вами цель (один раз за раунд)."
+		name: "Commander",
+		description: "Instead of making an attack roll, you can command an ally to make an attack against a target of your choice (once per round)."
 	},
 	{
 		id: 35,
 		role: null,
-		name: "Клей",
-		description: "Вы прилипаете ко всему, к чему прикасаетесь. Любое огромное или меньшее существо, прилипшее к вам, также становится схваченным, и проверки характеристик, сделанные для выхода из захвата, совершаются с помехой."
+		name: "Adhesive",
+		description: "You adhere to anything you touch. Any huge or smaller creature adhered to you is also grappled, and ability checks made to escape your grapple have disadvantage."
 	},
 	{
 		id: 36,
 		role: null,
-		name: "Агрессивный",
-		description: "бонусным действием вы можете двигаться со своей скоростью к врагу, которого видите."
+		name: "Aggressive",
+		description: "As a bonus action, you can move up to your speed towards an enemy you can see."
 	},
 	{
 		id: 37,
 		role: null,
-		name: "Будильник",
-		description: "Когда вы получаете урон, все другие монстры той же породы в пределах 240 футов знают о вашей боли."
+		name: "Alarm",
+		description: "When you take damage, all other monsters of the same breed within 240 ft are aware of your pain."
 	},
 	{
 		id: 38,
 		role: null,
-		name: "Чужой разум",
-		description: "Вы совершаете с преимуществом спасброски Мудрости."
+		name: "Alien Mind",
+		description: "You have advantage on Wisdom saving throws."
 	},
 	{
 		id: 39,
 		role: null,
-		name: "Аморфный",
-		description: "Вы можете пройти через пространство шириной всего 1 дюйм, не протискиваясь."
+		name: "Amorphous",
+		description: "You can move through a space as narrow as 1 inch wide without squeezing."
 	},
 	{
 		id: 40,
 		role: null,
-		name: "Магическая защита",
-		description: "Вы устойчивы ко всем магическим повреждениям."
+		name: "Arcane Protection",
+		description: "You are resistant to all magical damage."
 	},
 	{
 		id: 41,
 		role: null,
-		name: "Аура: Антимагия",
-		description: "Любое существо в пределах 10 футов от вас получает помеху при использовании магических заклинаний."
+		name: "Aura: Antimagic",
+		description: "Any creature within 10ft of you has disadvantage when casting magical spells."
 	},
 	{
 		id: 42,
 		role: null,
-		name: "Аура: Повреждение",
-		description: "Пространство вокруг вас опасно. Существа получают урон, равный вашему уровню, когда входят в вашу ауру или начинают свой ход внутри нее."
+		name: "Aura: Damaging",
+		description: "The space around you is dangerous. Creatures take damage equal to your level when they enter your aura or start their turn within it."
 	},
 	{
 		id: 43,
 		role: null,
-		name: "Аура: Разрушительная",
-		description: "Все враги в пределах 10 футов от вас совершают спасброски с помехой."
+		name: "Aura: Disruptive",
+		description: "All enemies within 10 ft of you have disadvantage on saving throws."
 	},
 	{
 		id: 44,
 		role: null,
-		name: "Аура: Запутывание",
-		description: "Земля в радиусе 10 футов вокруг вас представляет собой труднопроходимую местность. Каждое существо, которое начинает свой ход в этой области, должно преуспеть в спасброске Силы, иначе его скорость будет снижена до 0 до начала его следующего хода."
+		name: "Aura: Entangle",
+		description: "The ground in a 10 ft radius around you is difficult terrain. Each creature that starts its turn in that area must succeed on a Strength saving throw or have its speed reduced to 0 until the start of its next turn."
 	},
 	{
 		id: 45,
 		role: null,
-		name: "Аура: Вонь",
-		description: "Воздух вокруг вас гнилостный. Существа в пределах 10 футов от вас совершают броски атаки с помехой, если только они не обладают чертой Зловоние"
+		name: "Aura: Stench",
+		description: "The air is putrid around you. Creatures within 10ft of you have disadvantage on attack rolls, unless they also have the <i>Stench</i> trait."
 	},
 	{
 		id: 46,
 		role: null,
-		name: "Колючая шкура",
-		description: "В начале вашего хода нанесите колющий урон, равный вашему уровню, любому существу, которое вас схватило."
+		name: "Barbed Hide",
+		description: "At the start of your turn, deal piercing damage equal to your level to any creature that is grappling you."
 	},
 	{
 		id: 47,
 		role: null,
-		name: "Кровавое безумие",
-		description: "Вы совершаете с преимуществом броски атаки в ближнем бою против любого существа, у которого нет всех своих хитов."
+		name: "Blood Frenzy",
+		description: "You have advantage on melee attack rolls against any creature that doesn’t have all its hit points."
 	},
 	{
 		id: 48,
 		role: null,
-		name: "Атака с натиском",
-		description: "Если вы продвинулись более чем на 20 футов по прямой к своей цели, сделайте бросок атаки ближнего боя с преимуществом. При попадании вы сбиваете цель с ног в дополнение к любому другому эффекту."
+		name: "Charger",
+		description: "If you moved more than 20ft in a straight line towards your target, make your melee attack roll with advantage. On a hit, you knock your target prone in addition to any other effect."
 	},
 	{
 		id: 49,
 		role: null,
-		name: "Сжать",
-		description: "В начале вашего хода нанесите дробящий урон, равный вашему уровню, любому существу, которое вы схватили."
+		name: "Constrict",
+		description: "At the start of your turn, deal bludgeoning damage equal to your level to any creature that you are grappling."
 	},
 	{
 		id: 50,
 		role: null,
-		name: "Коррозионное тело",
-		description: "Любое существо, которое касается вас или атакует вас в ближнем бою, получает урон, равный вашему уровню. Любое оружие, которое бьет вас, получает постоянный и кумулятивный штраф -1 к броскам урона — оружие уничтожается, если штраф достигает -5. "
+		name: "Corrosive Body",
+		description: "Any creature that touches you or makes a melee attack against you takes damage equal to your level. Any weapon that hits you takes a permanent and cumulative −1 penalty to damage rolls—the weapon is destroyed if the penalty reaches −5."
 	},
 	{
 		id: 51,
 		role: null,
-		name: "Критическая защита",
-		description: "Критические удары по вам считаются обычными ударами, если только вы уже не окровавлены."
+		name: "Critical Defence",
+		description: "Critical hits made against you count as normal hits unless you are already bloodied."
 	},
 	{
 		id: 52,
 		role: null,
-		name: "Критическая ярость",
-		description: "Ваши атаки наносят критический удар при броске 19-20."
+		name: "Critical Fury",
+		description: "Your attacks score a critical hit on a roll of 19-20."
 	},
 	{
 		id: 53,
 		role: null,
-		name: "Поглощение урона",
-		description: "Всякий раз, когда вы получаете урон определенного типа, вы вместо этого восстанавливаете столько же хитов."
+		name: "Damage Absorption",
+		description: "Whenever you would take damage of a specific type, you instead regain that many hit points."
 	},
 	{
 		id: 54,
 		role: null,
-		name: "Перенос урона",
-		description: "Когда вы получаете урон от атаки, вы можете передать половину урона другому существу в пределах 5 футов от вас."
+		name: "Damage Transfer",
+		description: "When you take damage from an attack, you can transfer half of the damage to another creature within 5 ft of you."
 	},
 	{
 		id: 55,
 		role: null,
-		name: "Опасное тело",
-		description: "Любой враг, который касается вас или поражает вас атакой ближнего боя, находясь в пределах 5 футов от вас, получает урон, равный вашему уровню."
+		name: "Dangerous Body",
+		description: "Any enemy that touches you or hits you with a melee attack while within 5 ft of you takes damage equal to your level."
 	},
 	{
 		id: 56,
 		role: null,
-		name: "Распад",
-		description: "Когда вы умираете, ваше тело превращается в пыль. Вы оставляете свое оружие и все, что у вас есть."
+		name: "Disintegration",
+		description: "When you die, your body distintegrates into dust. You leave behind your weapons and anything else you are carrying."
 	},
 	{
 		id: 57,
 		role: null,
-		name: "Драконье дыхание",
-		description: "Вы можете дышать драконьим пламенем в качестве атаки или использовать его для разжигания небольших костров."
+		name: "Dragonbreath",
+		description: "You can breathe dragonfire as an attack, or use it to light small fires."
 	},
 	{
 		id: 58,
 		role: null,
-		name: "Земное скольжение",
-		description: "Вы можете копаться в немагической необработанной земле и камне. При этом вы не тревожите материал, через который проходите."
+		name: "Earth Glide",
+		description: "You can burrow through nonmagical, unworked earth and stone. While doing so, you don’t disturb the material you move through."
 	},
 	{
 		id: 59,
 		role: null,
-		name: "Побег",
-		description: "Когда ваши хиты опустятся до 0 за пределами вашего логова, вы вместо этого убегаете и бежите в свое логово. Вы остаетесь там, парализованные и отдыхающие, пока не восстановите по крайней мере 50% своих хитов."
+		name: "Escape",
+		description: "When you would be reduced to 0 hit points outside of your lair, you instead escape and flee to your lair. You remain there, paralysed and resting, until you recover at least 50% of your hit points."
 	},
 	{
 		id: 60,
 		role: null,
-		name: "Взрыв",
-		description: "Когда ваши хиты падают до 0, ваше тело взрывается и наносит урон всем в радиусе 5 футов. Вы можете начать детонацию в свой ход бонусным действием; вы взрываетесь в начале своего следующего хода."
+		name: "Explosive",
+		description: "When you fall to 0 hit points, your body explodes and deals damage to everyone within 5ft. You can begin detonation on your turn with a bonus action; you explode at the start of your next turn."
 	},
 	{
 		id: 61,
 		role: null,
-		name: "Ложная внешность",
-		description: "Когда остаешься неподвижным, тебя невозможно отличить от кусочка местного пейзажа."
+		name: "False Appearance",
+		description: "When you remain motionless, you are indistinguishable from a piece of the local landscape."
 	},
 	{
 		id: 62,
 		role: null,
-		name: "Фейский разум",
-		description: "Вы совершаете с преимуществом спасброски от очарования, и магия не может вас усыпить."
+		name: "Fey Mind",
+		description: "You have advantage on saving throws against being charmed, and magic can’t put you to sleep."
 	},
 	{
 		id: 63,
 		role: null,
-		name: "Полет",
-		description: "Вы можете летать со своей скоростью. Во время полета вы должны двигаться со всей скоростью своего движения или приземлиться — если вы также не можете парить. Запуск в полет провоцирует атаки, даже если вы совершаете Отход "
+		name: "Flight",
+		description: "You can fly your speed. While flying, you must move your entire movement speed or land—unless you can also hover. Launching into flight provokes opportunity attacks, even if you <i>Disengage</i>."
 	},
 	{
 		id: 64,
 		role: null,
-		name: "Флайбай",
-		description: "Вы не провоцируете атаку, когда вылетаете из зоны досягаемости врага."
+		name: "Flyby",
+		description: "You don’t provoke an opportunity attack when you fly out of an enemy’s reach."
 	},
 	{
 		id: 65,
 		role: null,
-		name: "Свобода передвижения",
-		description: "Вы игнорируете труднопроходимую местность, и магические эффекты не могут снизить вашу скорость или заставить ее быть ограниченной. Вы можете потратить 5 футов движения, чтобы вырваться из немагических ограничений или быть схваченным."
+		name: "Freedom of Movement",
+		description: "You ignore difficult terrain, and magical effects can’t reduce your speed or cause it to be restrained. You can spend 5 ft of movement to escape from nonmagical restraints or being grappled."
 	},
 	{
 		id: 66,
 		role: null,
-		name: "Борец",
-		description: "Вы совершаете броски атаки с преимуществом против любой цели, которую вы схватили. Кроме того, при захвате цели любой урон, который вы получаете от атаки, делится 50/50 с вашей жертвой."
+		name: "Grappler",
+		description: "You have advantage on attack rolls against any target you have grappled. In addition, when grappling a target, any damage you take from an attack is split 50/50 with your victim."
 	},
 	{
 		id: 67,
 		role: null,
-		name: "Парение",
-		description: "Вы можете зависать в воздухе в течение 6 секунд, прежде чем вам нужно будет двигаться."
+		name: "Hover",
+		description: "You can hover in one spot in the air for 6 second before you need to move."
 	},
 	{
 		id: 68,
 		role: null,
-		name: "Бессмертный",
-		description: "Вы не можете быть убиты, если ваши хиты не опустятся до 0 с помощью определенного типа атаки. Любая другая форма атаки вместо этого уменьшит ваши хиты до 1."
+		name: "Immortal",
+		description: "You cannot be killed unless you are reduced to 0 hit points by a specific type of attack. Any other form of attack will reduce you to 1 hit point instead."
 	},
 	{
 		id: 69,
 		role: null,
-		name: "Неизменяемая форма",
-		description: "Вы невосприимчивы к любому заклинанию или эффекту, который может изменить вашу форму."
+		name: "Immutable Form",
+		description: "You are immune to any spell or effect that would alter your form."
 	},
 	{
 		id: 70,
 		role: null,
-		name: "Непроницаемый",
-		description: "Вы устойчивы ко всем немагическим повреждениям."
+		name: "Impenetrable",
+		description: "You are resistant to all non-magical damage."
 	},
 	{
 		id: 71,
 		role: null,
-		name: "Бестелесный",
-		description: "Вы можете пройти сквозь любую твердую немагическую материю и не можете быть поражены никаким немагическим оружием или атакой."
+		name: "Incorporeal",
+		description: "You can pass through any solid non-magical matter and cannot be hit by any non-magical weapon or attack."
 	},
 	{
 		id: 72,
 		role: null,
-		name: "Неукротимая",
-		description: "Вы невосприимчивы к любым эффектам, которые могут изменить ваш разум или волю."
+		name: "Indominable",
+		description: "You are immune to any effects that would alter your mind or will."
 	},
 	{
 		id: 73,
 		role: null,
-		name: "Непостижимый",
-		description: "Вы невосприимчивы к любому эффекту, который мог бы чувствовать ваши эмоции или читать ваши мысли, а также к любому заклинанию предсказания, от которого вы отказываетесь."
+		name: "Inscrutable",
+		description: "You are immune to any effect that would sense your emotions or read your thoughts, as well as any divination spell that you refuse. Wisdom (Insight) checks made to ascertain your intentions or sincerity have disadvantage."
 	},
 	{
 		id: 74,
 		role: null,
-		name: "Невидимый",
-		description: "Вас нельзя увидеть."
+		name: "Invisible",
+		description: "You cannot be seen."
 	},
 	{
 		id: 75,
 		role: null,
-		name: "Пожиратель жизни",
-		description: "Когда вы наносите урон, уменьшающий хиты существа до 0, это существо не может быть воскрешено никакими средствами, кроме заклинания желания."
+		name: "Life Eater",
+		description: "When you deal damage that reduces a creature to 0 hit points, that creature cannot be revived by any means short of a wish spell."
 	},
 	{
 		id: 76,
 		role: null,
-		name: "Сопротивление магии",
-		description: "Вы совершаете с преимуществом спасброски от заклинаний и других магических эффектов."
+		name: "Magic Resistance",
+		description: "You have advantage on saving throws against spells and other magical effects."
 	},
 	{
 		id: 77,
 		role: null,
-		name: "Волшебное оружие",
-		description: "Ваши атаки оружием магические."
+		name: "Magic Weapons",
+		description: "Your weapon attacks are magical."
 	},
 	{
 		id: 78,
 		role: null,
-		name: "Военное преимущество",
-		description: "Один раз за ход вы можете нанести дополнительный урон, равный вашему уровню, когда вы поражаете цель в пределах 5 футов от ваших союзников."
+		name: "Martial Advantage",
+		description: "Once per turn you may deal extra damage equal to your level when you hit a target within 5ft of your allies."
 	},
 	{
 		id: 79,
 		role: null,
-		name: "Парирование",
-		description: "Вы можете потратить свою реакцию, чтобы получить +3 КЗ против одной атаки ближнего боя, которую вы видите."
+		name: "Parry",
+		description: "You can spend your reaction to gain +3 AC against one melee attack that you can see."
 	},
 	{
 		id: 80,
 		role: null,
-		name: "Ярость",
-		Description: "Когда вы уменьшаете хиты цели до 0 с помощью атаки ближнего боя в свой ход, вы можете потратить бонусное действие, чтобы переместиться на половину своей скорости и атаковать другую цель."
+		name: "Rampage",
+		description: "When you reduce a target to 0 hit points with a melee attack on your turn, you can spend a bonus action to move up to half your speed and attack a different target."
 	},
 	{
 		id: 81,
 		role: null,
-		name: "Безрассудный",
-		description: "В начале вашего хода вы можете получить преимущество во всех атаках ближнего боя, которые вы совершаете в этом ходу. Однако все атаки против вас получают преимущество до начала вашего следующего хода."
+		name: "Reckless",
+		description: "At the start of your turn, you can gain advantage on all melee attacks you make for that turn. However, all attacks against you gain advantage until the start of your next turn."
 	},
 	{
 		id: 82,
 		role: null,
-		name: "Перенаправление",
-		description: "Когда вы находитесь в пределах 5 футов от союзника, вы можете вместо этого перенаправить любую одиночную атаку, направленную против вас, на вашего союзника."
+		name: "Redirect",
+		description: "When you are within 5ft of an ally, you can redirect any single attack made against you to your ally instead."
 	},
 	{
 		id: 83,
 		role: null,
-		name: "Регенерация",
-		description: "Вы восстанавливаете очки жизни в начале вашего хода, равные вашему максимальному количеству хитов / 10. Эта регенерация останавливается на 1 ход, если вы поражены определенным типом урона (огонь/кислота/молния/и т. д.) или вы уменьшены до 0 хитов."
+		name: "Regeneration",
+		description: "You regain hit points at the start of your turn equal to your maximum hit points / 10. This regeneration stops for 1 turn if you are hit by a specific damage type (fire/acid/lightning/etc) or you are reduced to 0 hit points."
 	},
 	{
 		id: 84,
 		role: null,
-		name: "Неумолимый",
-		description: "В первый раз, когда ваши хиты падают до 0 после длительного отдыха, вместо этого ваши хиты уменьшаются до 1."
+		name: "Relentless",
+		description: "The first time you fall to 0 hit points after a long rest, you are instead reduced to 1 hit point."
 	},
 	{
 		id: 85,
 		role: null,
-		name: "Осадное чудовище",
-		description: "Вы наносите двойной урон объектам и строениям."
+		name: "Seige Monster",
+		description: "You deal double damage to objects and structures."
 	},
 	{
 		id: 86,
 		role: null,
-		name: "Тень Стелс",
-		description: "Находясь в тусклом свете или в темноте, вы можете совершить действие Спрятаться бонусным действием."
+		name: "Shadow Stealth",
+		description: "While in dim light or darkness, you can take the Hide action as a bonus action."
 	},
 	{
 		id: 87,
 		role: null,
-		name: "Шифти",
-		description: "Вы можете совершить Отход бонусным действием."
+		name: "Shifty",
+		description: "You can <i>Disengage</i> as a bonus action."
 	},
 	{
 		id: 88,
 		role: null,
-		name: "Скользкий",
-		description: "Вы совершаете с преимуществом проверки характеристик и спасброски, чтобы избежать захвата."
+		name: "Slippery",
+		description: "You have advantage on ability checks and saving throws made to escape a grapple."
 	},
 	{
 		id: 89,
 		role: null,
-		name: "Восхождение паука",
-		description: "Вы можете карабкаться по сложным поверхностям, в том числе вверх ногами по потолку, без необходимости делать проверку характеристик."
+		name: "Spider Climb",
+		description: "You can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
 	},
 	{
 		id: 90,
 		role: null,
-		name: "Сплит",
-		description: "Когда вы ранены, вы разделяетесь на две меньшие копии. Каждая новая копия имеет очки жизни, равные половине ваших оставшихся хитов , и действует независимо ."
+		name: "Split",
+		description: "When you are bloodied, you split into two smaller copies. Each new copy has hit points equal to half of your remaining hit points, and acts independantly."
 	},
 	{
 		id: 91,
 		role: null,
-		name: "Устойчивый",
-		description: "Вы совершаете с преимуществом спасброски Силы и Ловкости против эффектов, которые могут сбить вас с ног."
+		name: "Sure-footed",
+		description: "You have advantage on Strength and Dexterity saving throws made against effects that would knock you prone."
 	},
 	{
 		id: 92,
 		role: null,
-		name: "Рой",
-		description: "Вы можете занимать пространство другого существа и наоборот. Вы получаете преимущество при атаках против любого существа, которое разделяет ваше пространство."
+		name: "Swarm",
+		description: "You can occupy another creature’s space and vice versa. You gain advantage on attacks against any creature that shares your space."
 	},
 	{
 		id: 93,
 		role: null,
-		name: "Командная работа",
-		description: "Вы совершаете броски атаки с преимуществом, когда ваша цель находится в пределах 5 футов от ничем не сдерживаемого союзника."
+		name: "Teamwork",
+		description: "You have advantage on attack rolls when your target is within 5ft of an unrestrained ally."
 	},
 	{
 		id: 94,
 		role: null,
-		name: "Сверхъестественные чувства",
-		description: "Если вы не выведены из строя, вас нельзя застать врасплох."
+		name: "Uncanny Senses",
+		description: "Unless you are incapacitated, you cannot be surprised."
 	},
 	{
 		id: 95,
 		role: null,
-		name: "Бессмертная стойкость",
-		description: "Если урон снижает ваши хиты до 0, совершите спасбросок Телосложения КС 5 + полученный урон. Вместо этого при успехе ваши хиты опускаются до 1."
+		name: "Undying Fortitude",
+		description: "If damage reduces you to 0 hit points, make a Consititution saving throw with a DC of 5 + the damage taken. On a success, you drop to 1 hit point instead."
 	},
 	{
 		id: 96,
 		role: null,
-		name: "Бодрствующий",
-		description: "Вас никогда не застанут спящим."
+		name: "Wakeful",
+		description: "You are never caught sleeping."
 	},
 	{
 		id: 97,
 		role: null,
-		name: "Боевая магия",
-		description: "Когда вы используете свое действие, чтобы разыграть заклинание, вы можете совершить одну атаку оружием бонусным действием."
+		name: "War Magic",
+		description: "When you use your action to cast a spell, you can make one weapon attack as a bonus action."
 	}
 ];
 

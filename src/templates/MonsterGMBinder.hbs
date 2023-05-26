@@ -47,7 +47,7 @@ ___
 > - **Опасность** {{{challenge.rating}}} ({{challenge.xp}} опыта)
 > ___
 {{#if attack.bonus}}
-> - **Атаки** {{#if attack.isActive}}КС {{attack.bonus}} против КЗ{{#if attack.isActiveSmaller}} − 10{{/if}}{{/if}}{{#unless attack.isActive}}{{fmtModifier attack.bonus}} к попаданию{{/unless}}. _Попадание:_ {{attack.damage}} damage
+> - **Атаки** {{#if attack.isActive}}КС {{attack.bonus}} против КЗ{{#if attack.isActiveSmaller}} − 10{{/if}}{{/if}}{{#unless attack.isActive}}{{fmtModifier attack.bonus}} к попаданию{{/unless}}. _Hit:_ {{attack.damage}} damage
 > - **КС атак** Основной КС {{{dc.primary}}}, Вторичный КС {{dc.secondary}}
 {{#if attack.isActive}}
 > - **Активная защита** {{#if attack.isActiveSmaller}}_(Меньший вариант)_ {{/if}} Вы не совершаете броски атаки. Вместо этого ваши цели совершают броски защиты.

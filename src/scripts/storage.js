@@ -32,26 +32,26 @@ const Storage = (function() {
 		blueprint.setSpeedNormal("30 ft.");
 		blueprint.setLanguages([
 			{
-				name: "Общий",
+				name: "common",
 				custom: null
 			}
 		]);
 		blueprint.setTraits([
 			{
-				name: "(Атакующий) Дикое нападение",
-				detail: "Один раз за ход добавьте свой уровень дополнительного урона к атаке."
+				name: "(Striker) Savage Assault",
+				detail: "Once per turn, add your level in extra damage to an attack."
 			}, {
-				name: "Шифти",
-				detail: "Вы можете совершить _Отход_ бонусным действием."
+				name: "Shifty",
+				detail: "You can _Disengage_ as a bonus action."
 			}
 		]);
 		blueprint.setActions([
 			{
-				name: "Размах",
-				detail: "_Атака оружием ближнего боя:_ [attack] против КЗ. _Попадание:_ [damage, d4] рубящего урона."
+				name: "Slash",
+				detail: "_Melee Weapon Attack:_ [attack] vs AC. _Hit:_ [damage, d4] slashing damage."
 			}, {
-				name: "Опрокинуть",
-				detail: "_Атака оружием ближнего боя:_ [dc-primary] против Силы. _Попадание:_ цель сдвинута на до 10 футов от Вас."
+				name: "Knockback",
+				detail: "_Melee Weapon Attack:_ [dc-primary] vs Strength. _Hit:_ the target is pushed up to 10 ft away."
 			}
 		]);
 		blueprint.setBonusActions([]);

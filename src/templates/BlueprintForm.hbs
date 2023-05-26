@@ -79,7 +79,7 @@
 						</select>
 					</div>
 					<div class="form-group">
-						<label>Тип</label>
+						<label>Type</label>
 						<select class="form-control" name="description.type">
 							<option value="Абберация" {{selected blueprint.description.type "aberration"}}>Абберация</option>
 							<option value="Животное" {{selected blueprint.description.type "beast"}}>Животное</option>
@@ -98,7 +98,7 @@
 						</select>
 					</div>
 					<div class="form-group">
-						<label>Мировоззрение</label>
+						<label>Alignment</label>
 						<select class="form-control" name="description.alignment">
 							<option value="Законно Доброе" {{selected blueprint.description.alignment "lawful good"}}>Законно Доброе</option>
 							<option value="Нейтрально Доброе" {{selected blueprint.description.alignment "neutral good"}}>Нейтрально Доброе</option>
@@ -707,7 +707,7 @@
 			<div class="card-header">
 				<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#blueprint-trait" {{#if display.blueprint-trait}}aria-expanded="true"{{/if}}>
 					<span class="fas fa-chevron-right"></span>
-					<span class="title">Особенности</span>
+					<span class="title">Traits</span>
 					<span class="badge">{{blueprint.traits.length}}</span>
 				</button>
 			</div>
@@ -924,7 +924,7 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<h5 class="modal-title">
-					<span class="card-icon fas fa-question"></span> Markdown & сокращения
+					<span class="card-icon fas fa-question"></span> Markdown & Shortcodes
 				</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
@@ -940,16 +940,16 @@
 						</div>
 						<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
 							<div class="card-body">
-								<p>Вы можете использовать базовый <strong>markdown</strong> для добавления полужирного и курсивного форматирования к вашим текстовым блокам.</p>
+								<p>You can use some basic <strong>markdown</strong> to add bold and italic formatting to your text blocks.</p>
 								<table class="table table-default table-bordered">
 									<tbody>
 										<tr>
-											<td><strong>Полужирный</strong></td>
-											<td>Добавьте две звездочки (**) по обе стороны от текста (например, **жирный**), чтобы выделить его жирным шрифтом.</td>
+											<td><strong>Bold</strong></td>
+											<td>Add two asterisks (**) either side of your text (e.g. **bold**) to put it in bold.</td>
 										</tr>
 										<tr>
-											<td><i>Курсив</i></td>
-											<td>Поместите знак подчеркивания (_) с обеих сторон текста (например, _italic_), чтобы выделить его курсивом.</td>
+											<td><i>Italic</i></td>
+											<td>Put an underscore (_) either side of your text (e.g. _italic_) to put it in italics.</td>
 										</tr>
 									</tbody>
 								</table>
@@ -959,12 +959,12 @@
 					<div class="card">
 						<div class="card-header" id="headingTwo">
 							<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-								2. Случайные броски
+								2. Random Rolls
 							</button>
 						</div>
 						<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
 							<div class="card-body">
-								<p>Вы можете добавить <strong>случайные броски костей</strong> с помощью специального короткого кода. Вы можете использовать кость любого размера.</p>
+								<p>You can add <strong>random dice rolls</strong> with a special shortcode. You can use any dice size.</p>
 								<table class="table table-default table-bordered">
 									<tbody>
 										<tr>
@@ -987,7 +987,7 @@
 						</div>
 						<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
 							<div class="card-body">
-								<p>При создании монстра с помощью быстрого старта вы можете использовать <strong>сокращения</strong> для автоматического расчета и вставки чисел в текст.</p>
+								<p>When creating a quickstart monster, you can use <strong>shortcodes</strong> to automatically calculate and insert numbers into your text.</p>
 								<table class="table table-default table-bordered">
 									<tbody>
 										<tr>
@@ -1001,19 +1001,19 @@
 					<div class="card">
 						<div class="card-header" id="headingFour">
 							<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-								4. Shortcodes & модификаторы
+								4. Shortcodes & Modifiers
 							</button>
 						</div>
 						<div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
 							<div class="card-body">
-								<p>Вы можете использовать математические <strong>модификаторы</strong> для своих коротких кодов, чтобы преобразовать окончательный номер. Например:</p>
+								<p>You can use mathematical <strong>modifiers</strong> to your shortcodes to transform the final number. For example:</p>
 								<table class="table table-default table-bordered">
 									<tbody>
 										<tr>
 											<td class="text-center">
-												<p style="margin-bottom: 0">[level * 2] = уровень существа x 2</p>
-												<p style="margin-bottom: 0">[damage + 4] = Урон атаки + 4</p>
-												<p style="margin-bottom: 0">[(hp / 3) + 10] = (Хиты / 3) + 10</p>
+												<p style="margin-bottom: 0">[level * 2] = Monster Level x 2</p>
+												<p style="margin-bottom: 0">[damage + 4] = Attack Damage + 4</p>
+												<p style="margin-bottom: 0">[(hp / 3) + 10] = (Hit Points / 3) + 10</p>
 											</td>
 										</tr>
 									</tbody>
@@ -1024,19 +1024,19 @@
 					<div class="card">
 						<div class="card-header" id="headingFive">
 							<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-								5. Сокращения & случайные броски
+								5. Shortcodes & Random Rolls
 							</button>
 						</div>
 						<div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
 							<div class="card-body">
-								<p>Вы также можете добавить <strong>случайные броски</strong> в свои короткие коды, чтобы отображались как статические <i>, так и</i> случайные значения костей. Например:</p>
+								<p>You can also add <strong>random dice</strong> to your shortcodes to show both static <i>and</i> random dice values. For example:</p>
 								<table class="table table-default table-bordered">
 									<tbody>
 										<tr>
 											<td class="text-center">
-												<p style="margin-bottom: 0">[damage, d8] = Урон от атаки (показан в к8)</p>
-												<p style="margin-bottom: 0">[12 + str-mod, d20] = 12 + Модификатор Силы (показан в к20)</p>
-												<p style="margin-bottom: 0">[10 * level, d6] = 10 * уровень (показан в к6)</p>
+												<p style="margin-bottom: 0">[damage, d8] = Attack Damage (shown in d8)</p>
+												<p style="margin-bottom: 0">[12 + str-mod, d20] = 12 + Сила Mod (shown in d20)</p>
+												<p style="margin-bottom: 0">[10 * level, d6] = 10 * Level (shown in d6)</p>
 											</td>
 										</tr>
 									</tbody>
@@ -1119,14 +1119,14 @@
 					<li><strong>Быстрый старт:</strong> Базовые параметры (аттрибуты, спасброски, хиты, Класс Защиты, и т.д.) рассчитываются автоматически в зависимости от уровня существа, роли и ранга.</li>
 					<li><strong>Ручной:</strong> Ввести все параметры самостоятельно.</li>
 				</ol>
-<!--				<div class="alert alert-default text-center">-->
-<!--					<p>Для более подробного руководства по созданию существ читайте <strong>Киборгов и Чародеев</strong>.</p>-->
-<!--					<p>-->
-<!--						<a href="https://giffyglyph.com/monstermaker" class="btn btn-secondary" target="_blank">-->
-<!--							<span class="card-icon fas fa-book-open"></span> Читать-->
-<!--						</a>-->
-<!--					</p>-->
-<!--				</div>-->
+				<div class="alert alert-default text-center">
+					<p>Для более подробного руководства по созданию существ читайте <strong>Киборгов и Чародеев</strong>.</p>
+					<p>
+						<a href="https://giffyglyph.com/monstermaker" class="btn btn-secondary" target="_blank">
+							<span class="card-icon fas fa-book-open"></span> Читать
+						</a>
+					</p>
+				</div>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-primary" data-dismiss="modal">
