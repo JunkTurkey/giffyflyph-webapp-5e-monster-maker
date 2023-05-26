@@ -42,15 +42,15 @@ class PanelVault extends Component {
 			dom: '<"top"lf><"content"rt><"bottom"ip>',
 			lengthMenu: [
 					[ 10, 25, 50, 100, -1 ],
-					[ 'Show 10', 'Show 25', 'Show 50', 'Show 100', 'Show all' ]
+					[ 'Показать 10', 'Показать 25', 'Показать 50', 'Показать 100', 'Показать всех' ]
 			],
 			stateSave: true,
 			language: {
 				sInfo: "Showing _START_ to _END_ of _TOTAL_ monsters",
-				sInfoEmpty: "Showing 0 to 0 of 0 monsters",
+				sInfoEmpty: "Показываем 0 до 0 из 0 существ",
 				sInfoFiltered: "(filtered from _MAX_ total monsters)",
 				sLengthMenu: "_MENU_",
-				sZeroRecords: "No monsters found",
+				sZeroRecords: "Не найдено существ",
 				search: "",
 				paginate: {
 					previous: "&lt;",
@@ -60,16 +60,16 @@ class PanelVault extends Component {
 			data: this.data.monsters,
 			columns: [
 				{ data: 'id', className: 'col-id', title: "ID", type: "num" },
-				{ data: 'monster.description.name', className: 'col-name', title: "Name" },
-				{ data: 'monster.tags', className: 'col-description', title: "Description" },
-				{ data: 'monster.description.role', className: 'col-role-rank', title: "Role & Rank" },
-				{ data: 'monster.ac.value', className: 'col-ac-hp', title: "AC & HP" },
-				{ data: 'monster.description.level', className: 'col-level', title: "Lvl", type: "num" },
-				{ data: 'monster.description.role', className: 'col-role', title: "Role" },
-				{ data: 'monster.description.rank', className: 'col-rank', title: "Rank" },
-				{ data: 'monster.challenge.rating', className: 'col-cr', title: "CR", type: "num" },
-				{ data: 'monster.ac.value', className: 'col-ac', title: "AC", type: "num" },
-				{ data: 'monster.hp.average', className: 'col-hp', title: "HP", type: "num" }
+				{ data: 'monster.description.name', className: 'col-name', title: "Имя" },
+				{ data: 'monster.tags', className: 'col-description', title: "Описание" },
+				{ data: 'monster.description.role', className: 'col-role-rank', title: "Роль и ранг" },
+				{ data: 'monster.ac.value', className: 'col-ac-hp', title: "КЗ и хиты" },
+				{ data: 'monster.description.level', className: 'col-level', title: "Ур", type: "num" },
+				{ data: 'monster.description.role', className: 'col-role', title: "Роль" },
+				{ data: 'monster.description.rank', className: 'col-rank', title: "Ранг" },
+				{ data: 'monster.challenge.rating', className: 'col-cr', title: "ПО", type: "num" },
+				{ data: 'monster.ac.value', className: 'col-ac', title: "КЗ", type: "num" },
+				{ data: 'monster.hp.average', className: 'col-hp', title: "Хиты", type: "num" }
 			],
 			columnDefs: [
 				{
@@ -85,7 +85,7 @@ class PanelVault extends Component {
 				}, {
 					targets: [4],
 					render: function(data, type, row) {
-						return row.monster.ac.value + " AC, " + row.monster.hp.average + " HP";
+						return row.monster.ac.value + " КЗ, " + row.monster.hp.average + " хиты";
 					}
 				}, {
 					targets: [5, 9, 10],
