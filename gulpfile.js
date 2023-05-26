@@ -127,3 +127,7 @@ gulp.task('webserver', function() {
 });
 
 gulp.task('default', gulp.series('build', 'webserver'));
+
+const ghPages = require('gulp-gh-pages');
+
+gulp.task('deploy', () => src('./dist/**/*').pipe(ghPages()));
