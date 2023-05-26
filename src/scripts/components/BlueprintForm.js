@@ -105,8 +105,17 @@ class BlueprintForm extends Component {
 		$(this.el).on("click", "#modal-blueprint-traits .btn-confirm", function(e) {
 			$("#modal-blueprint-traits .form-check-input:checked").each(function(index, checkbox) {
 				let trait = this.data.traits.find(x => x.id == $(checkbox).val());
+				const translations = {
+					controller: "контроллер",
+					defender: "защитник",
+					lurker: "скрытень",
+					sniper: "снайпер",
+					striker: "атакующий",
+					scout: "разведчик",
+					supporter: "поддержка",
+				};
 				$("#blueprint-trait .card-body").append(Handlebars.templates["BlueprintFormTraitAction"]({
-					name: trait.role ? "(" + Helpers.capitalise(trait.role) + ") " + trait.name : trait.name,
+					name: trait.role ? "(" + Helpers.capitalise(translations[trait.role]) + ") " + trait.name : trait.name,
 					detail: trait.description
 				}));
 			}.bind(this));

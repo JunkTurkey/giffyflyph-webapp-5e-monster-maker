@@ -187,7 +187,7 @@
 			.col-role-rank,
 			.col-ac-hp {
 				overflow: hidden;
-				width: 0;
+				width: 8rem;
 			}
 
 			.dataTables_empty {
@@ -276,8 +276,9 @@
 				.col-description,
 				.col-role-rank,
 				.col-ac-hp {
+					white-space: normal;
 					overflow: hidden;
-					width: 0;
+					width: 8rem;
 				}
 
 				.col-ac,
