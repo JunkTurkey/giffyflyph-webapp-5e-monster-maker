@@ -79,7 +79,7 @@
 						</select>
 					</div>
 					<div class="form-group">
-						<label>Type</label>
+						<label>Тип</label>
 						<select class="form-control" name="description.type">
 							<option value="Абберация" {{selected blueprint.description.type "aberration"}}>Абберация</option>
 							<option value="Животное" {{selected blueprint.description.type "beast"}}>Животное</option>
@@ -98,7 +98,7 @@
 						</select>
 					</div>
 					<div class="form-group">
-						<label>Alignment</label>
+						<label>Мировоззрение</label>
 						<select class="form-control" name="description.alignment">
 							<option value="Законно Доброе" {{selected blueprint.description.alignment "lawful good"}}>Законно Доброе</option>
 							<option value="Нейтрально Доброе" {{selected blueprint.description.alignment "neutral good"}}>Нейтрально Доброе</option>
@@ -707,7 +707,7 @@
 			<div class="card-header">
 				<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#blueprint-trait" {{#if display.blueprint-trait}}aria-expanded="true"{{/if}}>
 					<span class="fas fa-chevron-right"></span>
-					<span class="title">Traits</span>
+					<span class="title">Особенности</span>
 					<span class="badge">{{blueprint.traits.length}}</span>
 				</button>
 			</div>
@@ -1119,14 +1119,14 @@
 					<li><strong>Быстрый старт:</strong> Базовые параметры (аттрибуты, спасброски, хиты, Класс Защиты, и т.д.) рассчитываются автоматически в зависимости от уровня существа, роли и ранга.</li>
 					<li><strong>Ручной:</strong> Ввести все параметры самостоятельно.</li>
 				</ol>
-				<div class="alert alert-default text-center">
-					<p>Для более подробного руководства по созданию существ читайте <strong>Киборгов и Чародеев</strong>.</p>
-					<p>
-						<a href="https://giffyglyph.com/monstermaker" class="btn btn-secondary" target="_blank">
-							<span class="card-icon fas fa-book-open"></span> Читать
-						</a>
-					</p>
-				</div>
+<!--				<div class="alert alert-default text-center">-->
+<!--					<p>Для более подробного руководства по созданию существ читайте <strong>Киборгов и Чародеев</strong>.</p>-->
+<!--					<p>-->
+<!--						<a href="https://giffyglyph.com/monstermaker" class="btn btn-secondary" target="_blank">-->
+<!--							<span class="card-icon fas fa-book-open"></span> Читать-->
+<!--						</a>-->
+<!--					</p>-->
+<!--				</div>-->
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-primary" data-dismiss="modal">
