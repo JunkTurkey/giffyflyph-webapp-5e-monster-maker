@@ -9,7 +9,7 @@ const Exporters = (function(){
 	function blueprintToImprovedInitiative(blueprint) {
 		let monster = Frankenstein.createMonster(blueprint);
 		return {
-			Source: "Giffyglyph's Monster Maker",
+			Source: "Создатель Чудовищ",
 			Type: monster.getType(),
 			HP: {
 				Value: monster.getHpAverage(),
@@ -138,19 +138,19 @@ const Exporters = (function(){
 					  bonus: 0
 					},
 					movement: {
-					  burrow: getOptionalValue(monster.getSpeeds().find(x => x.type == "burrow")),
-					  climb: getOptionalValue(monster.getSpeeds().find(x => x.type == "climb")),
-					  fly: getOptionalValue(monster.getSpeeds().find(x => x.type == "fly")),
-					  swim: getOptionalValue(monster.getSpeeds().find(x => x.type == "swim")),
-					  walk: getOptionalValue(monster.getSpeeds().find(x => x.type == "normal")),
+					  burrow: getOptionalValue(monster.getSpeeds().find(x => x.type == "копание")),
+					  climb: getOptionalValue(monster.getSpeeds().find(x => x.type == "взбирание")),
+					  fly: getOptionalValue(monster.getSpeeds().find(x => x.type == "полет")),
+					  swim: getOptionalValue(monster.getSpeeds().find(x => x.type == "плавание")),
+					  walk: getOptionalValue(monster.getSpeeds().find(x => x.type == "обычная")),
 					  units: "ft",
 					  hover: false
 					},
 					senses: {
-					  darkvision: getOptionalValue(monster.getSenses().find(x => x.type == "darkvision")),
-					  blindsight: getOptionalValue(monster.getSenses().find(x => x.type == "blindsight")),
-					  tremorsense: getOptionalValue(monster.getSenses().find(x => x.type == "tremorsense")),
-					  truesight: getOptionalValue(monster.getSenses().find(x => x.type == "truesight")),
+					  darkvision: getOptionalValue(monster.getSenses().find(x => x.type == "темное зрение")),
+					  blindsight: getOptionalValue(monster.getSenses().find(x => x.type == "слепое зрение")),
+					  tremorsense: getOptionalValue(monster.getSenses().find(x => x.type == "чувство вибрации")),
+					  truesight: getOptionalValue(monster.getSenses().find(x => x.type == "истинное зрение")),
 					  units: "ft",
 					  special: ""
 					}
