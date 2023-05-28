@@ -9,7 +9,7 @@ const Exporters = (function(){
 	function blueprintToImprovedInitiative(blueprint) {
 		let monster = Frankenstein.createMonster(blueprint);
 		return {
-			Source: "Giffyglyph's Monster Maker",
+			Source: "Создатель Чудовищ КиЧ",
 			Type: monster.getType(),
 			HP: {
 				Value: monster.getHpAverage(),
