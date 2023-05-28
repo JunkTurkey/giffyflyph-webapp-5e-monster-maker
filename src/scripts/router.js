@@ -38,7 +38,7 @@ const Router = (function() {
 			component: PanelVault,
 			breadcrumbs: [
 				{
-					text: "Убежище",
+					text: "Подземелье",
 					url: "/vault"
 				}
 			]
@@ -49,7 +49,7 @@ const Router = (function() {
 			component: PanelMonster,
 			breadcrumbs: [
 				{
-					text: "Убежище",
+					text: "Подземелье",
 					url: "/vault"
 				}, {
 					text: "Monster :id",

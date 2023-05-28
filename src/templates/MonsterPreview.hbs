@@ -295,7 +295,7 @@
 				<h5>Действия логова</h5>
 				<div class="h5-border"></div>
 				{{#if display.lairActionsInitiative}}
-					<p class="lair-initiative">На счете инициативы {{monster.lairActionsInitiative}} (уступая всем в случае равенство), существо может совершить действие логова, выбрав один из следующих эффектов. При этом нельзя использовать один и тот же эффект дважды подряд.</p>
+					<p class="lair-initiative">На счете инициативы {{monster.lairActionsInitiative}} (уступая всем в случае равенства), существо может совершить действие логова, выбрав один из следующих эффектов. При этом нельзя использовать один и тот же эффект дважды подряд.</p>
 				{{/if}}
 				{{#each monster.lairActions}}
 					<div class="monster-lair-action">
@@ -317,11 +317,14 @@
 		<div class="monster-contents-footer"></div>
 	</div>
 </div>
-<div>
-	{{#if display.downloadPng}}
-		<button type="button" class="btn btn-sm btn-primary btn-png">
-			<span class="fas fa-camera"></span> Сохранить как PNG
-		</button>
+<div class="row">
+    {{#if display.downloadPng}}
+        <button type="button" class="btn btn-sm btn-primary btn-png">
+            <span class="fas fa-camera"></span> Сохранить как PNG
+        </button>
+        <button type="button" class="btn btn-sm btn-primary btn-show-gmbinder">
+            <span class="fas fa-book-open"></span>Показать в формате GMBinder
+        </button>
 	{{/if}}
 	<button type="button" class="btn btn-sm btn-primary btn-columns icon-only icon-border">
 		<span class="fas fa-columns"></span>

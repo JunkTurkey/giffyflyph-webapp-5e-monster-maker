@@ -93,6 +93,13 @@ const Helpers = (function(){
 
 		Handlebars.registerHelper('fmtMonsterSpeeds', function(speeds) {
 			let output = "";
+			const translations = {
+				burrow: "копание",
+				climb: "взбирание",
+				fly: "полет",
+				swim: "плавание",
+				normal: "обычная",
+			}
 			speeds.forEach(function(speed, index) {
 				switch(speed.type) {
 					case "normal":
@@ -100,7 +107,7 @@ const Helpers = (function(){
 						output += speed.value;
 						break;
 					default:
-						output += speed.type + " " + speed.value;
+						output += translations[speed.type] + " " + speed.value;
 						break;
 				}
 				if (index < (speeds.length - 1)) {
@@ -112,13 +119,23 @@ const Helpers = (function(){
 
 		Handlebars.registerHelper('fmtMonsterSenses', function(senses) {
 			let output = "";
+			const translations = {
+				darkvision: "темное зрение",
+				blindsight: "слепое зрение",
+				tremorsense: "чувство вибрации",
+				truesight: "истинное зрение",
+			}
 			senses.forEach(function(sense, index) {
+				console.log(sense.type)
 				switch(sense.type) {
 					case "other":
 						output += sense.value;
 						break;
 					default:
-						output += sense.type + " " + sense.value;
+						let senseTranslated = sense.type
+						if (translations.hasOwnProperty(sense.type))
+							senseTranslated = translations[sense.type]
+						output += senseTranslated + " " + sense.value;
 						break;
 				}
 				if (index < (senses.length - 1)) {
