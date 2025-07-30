@@ -129,6 +129,9 @@ class Blueprint {
 		this.vid = 1;
 		this.method = options.method ? parseString(options.method) : this.method;
 		this.description.name = options.name ? parseString(options.name) : this.description.name;
+		this.description.size = options.size ? parseString(options.size) : this.description.size;
+		this.description.type = options.type ? parseString(options.type) : this.description.type;
+		this.description.alignment = options.alignment ? parseString(options.alignment) : this.description.alignment;
 		this.description.level = options.level ? parseNumber(options.level) : this.description.level;
 		this.description.role = options.role ? parseString(options.role.toLowerCase()) : this.description.role;
 		this.description.rank = options.type ? parseString(options.type.toLowerCase()) : this.description.rank;
